@@ -5,9 +5,7 @@ databases:
 services:
   - type: web
     name: rails
-    ipAllowList: []
     plan: free
-    maxmemoryPolicy: noeviction
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
