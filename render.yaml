@@ -1,6 +1,7 @@
 databases:
   - name: firstapp
     ipAllowList: []
+    plan: free
 
 services:
   - type: web
