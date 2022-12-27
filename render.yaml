@@ -1,14 +1,16 @@
 databases:
   - name: firstapp
-    databaseName: firstapp
-    user: firstapp
+    ipAllowList: []
 
 services:
   - type: web
-    name: firstapp
+    name: rails
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: bundle exec rails s
     envVars:
       - key: DATABASE_URL
         fromDatabase:
